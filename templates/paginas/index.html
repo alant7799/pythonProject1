@@ -1,0 +1,30 @@
+{% include 'header.html' %}
+    <h1 class="font-weight-bold">Playlist</h1>
+    <table class="table table-dark table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>#</th>
+                <th>Portada</th>
+                <th>Nombre</th>
+                <th>Url</th>
+                <th>Tipo</th>
+                <th>Acciones</th>
+            </tr>
+            <tbody>
+                {% for video in archivos %}
+                <tr>
+                    <td>{{video[0]}}</td>
+                    <td><img class="img-thumbnail" src="{{video[1]}}" width="100" alt="foto video"></td>
+                    <td>{{video[2]}}</td>
+                    <td><a href="{{video[3]}}">{{video[3]}}</a></td>
+                    <td>{{video[4]}}</td>
+                    <td> <a class="btn btn-outline-primary btn-sm" href="/edit/{{video[0]}}">Editar</a>
+                         <a class="btn btn-outline-primary btn-sm" href="/destroy/{{video[0]}}">Eliminar</a>
+                         <a class="btn btn-primary btn-sm" href="/descargar/{{video[0]}}">Descargar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </thead>
+    </table>
+{% include 'footer.html' %}

@@ -1,0 +1,27 @@
+{% include 'header.html' %}
+    <div class="container d-flex justify-content-center align-items-center">
+        <div>
+            <h1>Editar Datos del Video</h1>
+            {% for video in archivos %}
+                <form method="POST" action="/update" enctype="multipart/form-data">
+                    <img class="img-thumbnail" src="{{video[1]}}" width="100" alt="foto video">
+                    <br>
+                    <br>
+                    Id:
+                    <input type="text" name="txtId" value="{{video[0]}}" readonly="true" id=" txtId">
+                    <br><br>
+                    Nombre:
+                    <input type="text" name="txtNombre" value="{{video[2]}}" id="txtNombre">
+                    <br><br>
+                    Tipo:
+                    Mp4<input type="radio" name="audio" id="audio" value="Mp4"> 
+                    Mp3<input type="radio" name="audio" id="audio" value="Mp3">
+                    <br>
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Aceptar">
+                    <br>
+                </form>
+            {% endfor %}
+            </div>
+        </div>
+{% include 'footer.html' %}
