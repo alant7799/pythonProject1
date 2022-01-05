@@ -93,7 +93,7 @@ def update():
 
     cursor.execute(sql, datos)  # ejecuta la sentencia sql
     conn.commit()
-    return redirect("/")  # y renderiza index.html
+    return redirect("/")  # y renderiza indexViejo.html
 
 
 @app.route('/descargar/<int:id>', methods=['GET', 'POST'])
