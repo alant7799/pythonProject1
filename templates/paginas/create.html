@@ -1,12 +1,6 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="container d-flex justify-content-center align-items-center">
-<div>
-<h2>Ingrese link y formato del video a Añadir</h2>
 {% include 'header.html' %}
+<div class="container d-flex justify-content-center align-items-center">
+<h2>Ingrese link y formato del video a Añadir</h2>
     <form method="post" action="/store" enctype="multipart/form-data">
 
         <h3>link:</h3>
@@ -14,15 +8,13 @@
         <br>
 
         <h4>Tipo:</h4>
-        Mp4<input type="radio" name="audio" id="audio" value="Mp4"> 
+        Mp4<input type="radio" name="audio" id="audio" value="Mp4">
         Mp3<input type="radio" name="audio" id="audio" value="Mp3">
         <br>
         <br>
 
         <input class="btn btn-primary" type="submit" value="Agregar">
-
     </form>
-</div>
 </div>
 {% include 'footer.html' %}
 
