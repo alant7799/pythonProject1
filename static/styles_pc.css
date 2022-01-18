@@ -2,45 +2,6 @@
   box-sizing: border-box;
 }
 
-
-.container_nav {
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  width: 80%;
-  max-height: 20%;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-}
-
-.container_nav img{
-  width: 15%;
-  border-radius: 10px;
-}
-
-.links_nav {
-  display: flex;
-  justify-content:space-around;
-  width: 80%;
-  font-size: 2vw;
-}
-
-.links_nav a {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-  border: rgba(19, 19, 56, 0.7) solid 0.5vh;
-  border-radius: 1vw;
-  padding: 1vw;
-}
-
-a:hover {
-  box-shadow: 0 0 5px 5px rgb(255, 255, 255);
-}
-
 .titulo {
   margin: auto;
   display: flex;
@@ -53,21 +14,10 @@ a:hover {
   border-radius: 10px;
 }
 
-.section_right {
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  max-height: 20%;
-  border: rgba(19, 19, 56, 0.7) solid 0.5vh;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-}
-
 .section_left {
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: row-reverse;
   max-height: 20%;
   border: rgba(19, 19, 56, 0.7) solid 0.5vh;
@@ -82,154 +32,23 @@ a:hover {
   border-radius: 10px;
 }
 
-.section_left p, .section_right p {
-  width: 60%;
-  font-size: 2vw;
-}
-
-aside p {
+.instruciones {
   margin: auto;
-  border: rgba(19, 19, 56, 0.7) solid 0.5vh;
-  border-radius: 10px;
-  font-size: 2vw;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-main {
-  margin-top: 0;
-  width: 64%;
-}
-
-aside {
-  margin-top: 0;
-  width: 34%;
-  height: 100%;
-}
-
-.container_articulo {
-  margin: auto;
-  display: flex;
-  width: 80%;
-  align-content: space-between;
-}
-
-footer {
-  margin:auto;
-  border: rgba(19, 19, 56, 0.7) solid 0.5vh;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  width: 80%;
+  height: auto;
+  font-weight: bold;
   text-align: center;
 }
 
-/* sucursales */
-
-.mapas {
+.formulario {
   margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border: rgba(19, 19, 56, 0.7) solid 0.5vh;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
+  font-size: 2.5vw;
   width: 80%;
-}
-
-h2 {
-  margin:auto;
-  text-align: center;
-  font-weight: bold;
-  font-family: cursive;
-  border: rgba(19, 19, 56, 0.7) solid 0.5vh;
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 80%;
-  border-radius: 10px;
-}
-
-.divmapas p{
-  text-align: center;
-  font-size: 3vw;
-  font-family: cursive;
-  text-decoration: underline;
-}
-
-.divmapas iframe {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* registrarse */
-form {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: rgba(19, 19, 56, 0.7) solid 0.5vh;
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 80%;
-  border-radius: 10px;
-  font-size: 1.5vw;
-  font-weight: bold;
-}
-
-form input{
-  max-width: fit-content;
-  border-radius: 10px;
-}
-
-/* contacto */
-.redes {
-  margin: auto;
-  border: rgba(19, 19, 56, 0.7) solid 0.5vh;
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 80%;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 2vw;
-}
-
-textarea {
-  max-width: fit-content;
-  border-radius: 10px;
-}
-
-/* Destinos */
-.car_img {
-  width: 100%;
-  border-radius: 15px;
-}
-
-.parrafo {
-  margin: auto;
   border: rgba(19, 19, 56, 0.7) solid 0.5vh;
   border-radius: 10px;
-  font-size: 1.75vw;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 80%;
 }
 
-.primer_elemento , .segundo_elemento {
-  margin: auto;
-  width: 50%;
-  margin-top: 0;
-}
-
-.primera_fila {
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  justify-content:space-around;
-}
-
-.carousel-item img {
-  border-radius: 20px
-}
-
-li{
- font-size: 3vh;
- font-weight: bolder;
+.en_linea {
 }

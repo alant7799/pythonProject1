@@ -1,7 +1,22 @@
 {% include 'header.html' %}
 
-<div class="container pt-5 pb-5 my-5 bg-primary text-white">
+<br>
+<h1 class="instruciones">Ingrese link y formato</h1>
+<br>
 
+<div class="formulario">
+        <form method="post" action="/store" enctype="multipart/form-data">
+            <span>
+            <h3>link:</h3>
+            <input type="text" name="txtLink" id="txtLink">
+            </span>
+            <span>
+                <h4>Tipo:</h4>
+                Mp4<input type="radio" name="audio" id="audio" value="Mp4">
+                Mp3<input type="radio" name="audio" id="audio" value="Mp3">
+                <input class="btn btn-primary" type="submit" value="Agregar">
+            </span>
+        </form>
 </div>
 
 {% include 'footer.html' %}

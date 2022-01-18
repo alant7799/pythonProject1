@@ -10,9 +10,6 @@ CARPETA = os.path.join('uploads')  # al path del proyecto le adjunto â€˜uploadâ€
 app.config['CARPETA'] = CARPETA
 
 
-# guardar en la configuracion de python la carpeta de las fotos
-
-
 @app.route('/')
 def index():
     sql = "SELECT * FROM `main`;"
@@ -48,7 +45,7 @@ def storage():
     cursor.execute(sql, datos)
     conn.commit()
 
-    return redirect("/")
+    return redirect("/"),
 
 
 @app.route("/destroy/<int:id>")
@@ -113,6 +110,15 @@ def descargar(id):
 #   return send_from_directory("C:/youtube/uploads/",path="300  This is where we hold them.mp4",as_attachment=True)
 
 
+def borrar_datos():
+    sql = "DELETE FROM `main`;"
+    conn = sqlite3.connect("MiBaseDeDatos.sqlite")
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    conn.commit()
+    return render_template("paginas/index.html")
+
+
 @app.route("/return_file/<int:id>")
 def return_files(id):
     sql = "SELECT * FROM `main` WHERE `ID`=?;"
@@ -141,7 +147,7 @@ def return_files(id):
 
     print(path)
 
-    return send_from_directory("uploads", path=str(id_video) + ".mp4", as_attachment=True)
+    return send_from_directory("uploads", path=str(id_video) + ".mp4", as_attachment=True), borrar_datos()
 
 
 @app.route("/index")
