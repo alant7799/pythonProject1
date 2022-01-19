@@ -22,18 +22,16 @@ def descargar():
 
     objeto_video = YouTube(str(_link))  # Para pytube esto es un objeto
 
-    path = objeto_video.streams.filter(progressive=True, file_extension='mp4').order_by(
-        'resolution').desc().first().download("uploads", filename=str(id_video) + ".mp4")
+    titulo_del_video = str(objeto_video.title)
+    print(titulo_del_video)
 
     if _audio == "Mp4":
         path = objeto_video.streams.filter(progressive=True, file_extension='mp4').order_by(
-            'resolution').desc().first().download("uploads", filename=str(objeto_video.title) + ".mp4")
+            'resolution').desc().first().download("uploads")
     else:
-        path = (objeto_video.streams.filter(only_audio=True)[0]).download("uploads", filename=str(objeto_video.title)+
-                ".mp4")
+        path = (objeto_video.streams.filter(only_audio=True)[0]).download("uploads")
 
-    print(path)
-    return send_from_directory("uploads", path=str(objeto_video.title) + ".mp4", as_attachment=True)
+    return send_from_directory("uploads", path=objeto_video.title + ".mp4", as_attachment=True)
 
 
 @app.route("/index")
