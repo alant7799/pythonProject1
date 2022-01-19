@@ -12,22 +12,7 @@ app.config['CARPETA'] = CARPETA
 
 @app.route('/')
 def index():
-    sql = "SELECT * FROM `main`;"
-    conn = sqlite3.connect("MiBaseDeDatos.sqlite")
-    cursor = conn.cursor()
-    cursor.execute(sql)
-
-    archivos = cursor.fetchall()
-    print(archivos)
-
-    conn.commit()
-
-    return render_template('paginas/index.html', archivos=archivos)
-
-
-@app.route('/create')
-def create():
-    return render_template('paginas/create.html')
+    return render_template('paginas/index.html')
 
 
 @app.route("/store", methods=['POST'])
@@ -45,7 +30,7 @@ def storage():
     cursor.execute(sql, datos)
     conn.commit()
 
-    return redirect("/"),
+    return redirect("/")
 
 
 @app.route("/destroy/<int:id>")
@@ -76,23 +61,6 @@ def edit(id):
     return render_template("paginas/edit.html", archivos=archivos)
 
 
-@app.route("/update", methods=['POST'])
-def update():
-    _nombre = request.form['txtNombre']  # toma los datos txtNombre del form
-    _tipo = request.form['audio']
-    id = request.form['txtId']
-
-    conn = sqlite3.connect("MiBaseDeDatos.sqlite")
-    cursor = conn.cursor()
-
-    sql = "UPDATE `main` SET `NOMBRE`=? ,`TIPO`=? WHERE ID=?;"
-    datos = (_nombre, _tipo, id)  # crea la sentencia sql
-
-    cursor.execute(sql, datos)  # ejecuta la sentencia sql
-    conn.commit()
-    return redirect("/")  # y renderiza indexViejo.html
-
-
 @app.route('/descargar/<int:id>', methods=['GET', 'POST'])
 def descargar(id):
     sql = "SELECT * FROM `main` WHERE ID=?;"
@@ -103,11 +71,6 @@ def descargar(id):
     conn.commit()
     archivos = cursor.fetchall()
     return render_template("paginas/descargar.html", archivos=archivos)
-
-
-# @app.route("/return_file/")
-# def return_files():
-#   return send_from_directory("C:/youtube/uploads/",path="300  This is where we hold them.mp4",as_attachment=True)
 
 
 def borrar_datos():
